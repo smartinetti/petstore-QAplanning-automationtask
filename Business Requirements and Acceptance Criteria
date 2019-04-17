@@ -1,0 +1,66 @@
+PetStore Requirements
+
+As a Owner of Pet Store
+I want to sell pets to registered customers
+So the system provides some operations to manage pets, users and orders in the store
+
+
+Pet object is managed by PetStore server with the following actions:
+- Add a new pet to the store with all relevants data: id, category, petName, photo, tags and status
+- Update an existing pet in the store with all relevants data: id, category, petName, photo, tags and status
+- Change name and status of the pet by pet id
+- Upload an image file of an existing pet in the store by pet id
+- Delete an existing pet in the store by pet id
+- Filter pets by status (available, pending, sold)
+- Filter pet by id
+
+
+The actions available for the store management are:
+- Get how many pets are in the store for each status
+- Get the order purchased by id
+- Delete an order purchased by id
+- Place an order with all relevants data: orderId, petId, quantity, shipDate, status, complete
+
+
+User object is managed by PetStore server with the following actions:
+- Create a new user in the store with all relevants data: id, username, firstName, LastName, email, password, phone, userStatus
+- Manage a lot of users with list/array
+- User login into the PetStore with username and password
+- User logout from the PetStore 
+- Get a user by username
+- Update an existing user with all relevants data: id, username, firstName, LastName, email, password, phone, userStatus
+- Delete user by username
+
+
+
+Acceptance Criteria
+
+Given owner of pet store
+When owner add/update a pet in the store 
+Then pet is added/updated with all relevant data
+And pet status becomes available (or the status updated by owner)
+
+
+Given owner of pet store
+When owner register/update a user in the store 
+Then user is created/updated with all relevant data
+And user is able to login into the pet store
+
+
+Given owner of pet store
+When owner delete pet/user/order in the store 
+Then pet/user/order is deleted
+
+
+Given a logged registered user
+When user filters by pet statuses
+And user place an order of an available pet in the store 
+Then order is placed
+And pet status becomes sold
+
+
+Given a logged registered user
+When user delete an order purchased 
+Then order is deleted
+And pet status becomes available
+
